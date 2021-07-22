@@ -5,4 +5,6 @@ test your analyses on. Parameters are written in a CSV file, mock data is
 written into a CSV file."""
 
 import pandas
+import numpy
+
 
