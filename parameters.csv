@@ -1,0 +1,6 @@
+name,type,range_start,range_end,length,factors
+a,integer,1,10,,
+b,factor,,,,red|blue|green|yellow
+c,string,,,20,
+d,boolean,,,,
+e,number,1,10000,,
