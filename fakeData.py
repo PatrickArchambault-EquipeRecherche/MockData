@@ -8,7 +8,7 @@ df = []
 
 for n in range(50):
     df.append({
-               #'RAMQ': faker.number(),
+        'RecordID': faker.random_number(),
         'First_Name': faker.first_name(),
         'Last_Name': faker.last_name(),
         'DDN': faker.date_of_birth(),
@@ -23,10 +23,20 @@ for n in range(50):
               })
 
 df = pd.DataFrame(df)
-df = df[['First_Name','Last_Name', 'DDN','CodePostal','Date_Heure_sortie',
+df = df[['RecordID','First_Name','Last_Name', 'DDN','CodePostal','Date_Heure_sortie',
          'Date_Heure_index','Date_Gem','Adresse','No_dossier','Territoire_CLSC','RAMQ']]
 print(df)
 
 ##on veux écrire ce tableau dans un fichier CSV pour le lire sur excel
 df.to_csv("DataFrame.csv")
+#liste de numeros random pour prenom
 
+liste = random.sample(range(100000,999999), 150)
+
+with open('ListeNoRandom.txt', 'w') as file:
+
+    for i in liste:
+
+        if i not in open('ListeNoRandom.txt','r'):
+
+            file.write(str(i) + '\n')
