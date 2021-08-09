@@ -4,3 +4,4 @@ b,factor,,,,red|blue|green|yellow
 c,string,,,20,
 d,boolean,,,,
 e,number,1,10000,,
+f,date,,,,
