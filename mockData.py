@@ -10,6 +10,7 @@ import random
 import faker
 import datetime
 
+# Here is the basic function to create a single cell of data
 def fakeIt(type , start=None , end=None , length=None , description=None):
     if (type == "boolean"):
         return (random.randint( 0 , 1))
@@ -32,8 +33,9 @@ def fakeIt(type , start=None , end=None , length=None , description=None):
         return (my_date.strftime(description))
     else:
         print("Unknown 'type', looks like: " + type)
+        return False
 
-
+# Here is the function for reading and writing the CSV file.
 def mockData(parameterfile , count , filename = None):
     if filename == None:
         filename = "mockdata.csv"
@@ -73,8 +75,10 @@ def mockData(parameterfile , count , filename = None):
 
     return True
 
-mockData("parameters.csv" , 100)
+# Example for testing
+#mockData("parameters.csv" , 100)
 
+# fakeIt examples, based on defined code in the default parameters.csv file
 #print(fakeIt(name="a",type="integer",start=0,end=304))
 #print(fakeIt(name="b",type="factor",description="red|yellow|blue|green"))
 #print(fakeIt(name="c",type="string",length=200))
