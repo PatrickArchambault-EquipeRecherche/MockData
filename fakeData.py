@@ -2,6 +2,7 @@ from faker import Faker
 import pandas as pd
 faker = Faker(['en_CA'])
 import csv
+import random
 
 ##generer une liste of fake data qui sera stocké dans le tableau dataframe (DF)
 df = []
