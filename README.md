@@ -20,5 +20,12 @@ module, documented here:
 
 https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes
 
+Prerequisites:
+This is a Python program, to install Python, go to https://python.org
+It uses 4 modules (programs that extend the basic Python language):
+    csv, random, datetime, faker
+The first three are included in standard Python, but the last one is found here:
+https://pypi.org/project/Faker/
+
 TODO:
-Add a distribution specifier for "number" data, add in a "name" type
+Add a distribution (triangle, Gaussian, Gamma, Weibull, etc.) specifier for "number" data

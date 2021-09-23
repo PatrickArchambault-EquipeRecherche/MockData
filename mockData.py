@@ -4,7 +4,6 @@
 test your analyses on. Parameters are written in a CSV file, mock data is 
 written into a CSV file."""
 
-from os import name
 import csv
 import random
 import faker
@@ -25,6 +24,13 @@ def fakeIt(type , start=None , end=None , length=None , description=None):
         return (random.choice( description ))
     elif (type == "number"):
         return (random.uniform( int(start) , int(end) ))
+    elif (type == "name"):
+        if description == None:
+            fake = faker.Faker()
+            return (fake.name())
+        else:
+            fake = faker.Faker(description)
+            return (fake.name())
     elif (type == "date"):
         fake = faker.Faker()
         start = datetime.datetime.strptime(start , description)
@@ -41,7 +47,7 @@ def mockData(parameterfile , count , filename = None):
         filename = "mockdata.csv"
     else:
         pass
-    with open(filename , "a+") as output , open(parameterfile , "r") as params:
+    with open(filename , "a+", newline='') as output , open(parameterfile , "r") as params:
 
         parameters = csv.reader(params)
         param_grid = []
@@ -76,7 +82,7 @@ def mockData(parameterfile , count , filename = None):
     return True
 
 # Example for testing
-#mockData("parameters.csv" , 100)
+mockData("parameters.csv" , 100)
 
 # fakeIt examples, based on defined code in the default parameters.csv file
 #print(fakeIt(name="a",type="integer",start=0,end=304))

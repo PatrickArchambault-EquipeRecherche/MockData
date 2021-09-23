@@ -1,6 +1,6 @@
-columnname,a,b,c,d,e,f
-type,integer,factor,string,boolean,number,date
-range_start,1,None,None,None,1,2021-02-10
-range_end,10,None,None,None,10000,2021-08-10
-length,None,None,20,None,None,None
-description,None,red|blue|green|yellow,None,None,None,%Y-%m-%d
+columnname,a,b,c,d,e,f,g
+type,integer,factor,string,boolean,number,name,date
+range_start,1,None,None,None,1,None,2021-02-10
+range_end,10,None,None,None,10000,None,2021-08-10
+length,None,None,20,None,None,None,None
+description,None,red|blue|green|yellow,None,None,None,fr_CA,%Y-%m-%d
