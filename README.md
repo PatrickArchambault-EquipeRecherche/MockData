@@ -10,6 +10,14 @@ lists, data descriptions) and create as many example rows as we expect will
 be necessary so that analysis code can be written long before a given 
 experiment is finished.
 
+The most mature program to run is mockData.py, but there are good ideas in
+fakeData.py as well, which is gives similar results but requires more programming
+skill to use.
+
+There are a couple of useful tools to simulate or validate RAMQ numbers (health 
+system access numbers in Quebec, Canada (Régie de l’assurance maladie)), which are
+important for the authors' work, and remain here for use if they are needed.
+
 Details: 
 The output file is opened up for appending, so you can run the program many 
 times, making your file longer each time.  If that isn't the result you want, 
