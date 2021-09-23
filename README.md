@@ -30,9 +30,9 @@ https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-cod
 
 Prerequisites:
 This is a Python program, to install Python, go to https://python.org
-It uses 4 modules (programs that extend the basic Python language):
-    csv, random, datetime, faker
-The first three are included in standard Python, but the last one is found here:
+It uses 5 modules (programs that extend the basic Python language):
+    csv, sys, random, datetime, faker
+The first 4 are included in standard Python, but the last one is found here:
 https://pypi.org/project/Faker/
 
 TODO:
