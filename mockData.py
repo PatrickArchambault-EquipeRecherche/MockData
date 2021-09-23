@@ -5,6 +5,7 @@ test your analyses on. Parameters are written in a CSV file, mock data is
 written into a CSV file."""
 
 import csv
+import sys
 import random
 import faker
 import datetime
@@ -81,8 +82,16 @@ def mockData(parameterfile , count , filename = None):
 
     return True
 
-# Example for testing
-mockData("parameters.csv" , 100)
+if len(sys.argv) > 1:
+    param_file = sys.argv[1]
+    row_count = sys.argv[2]
+    if len(sys.argv) == 4:
+        output_file = sys.argv[3]
+        mockData(param_file, row_count, output_file)
+    else:
+        mockData(param_file, row_count)
+else:
+    mockData("parameters.csv" , 100)
 
 # fakeIt examples, based on defined code in the default parameters.csv file
 #print(fakeIt(name="a",type="integer",start=0,end=304))
