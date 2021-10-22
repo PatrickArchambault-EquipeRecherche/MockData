@@ -27,7 +27,7 @@ def ramq_generator(DDN,last_name,first_name,sex, admin_code):
 
 #generer une liste de fake data qui sera stocke dans le tableau dataframe (DF)
 df = []
-for n in range(50):
+for n in range(20):
     if random.randint(0, 1) == 0:
         sex = "M"
     else:
@@ -80,8 +80,3 @@ with open('ListeNoRandom.txt', 'w') as file:
         if i not in open('ListeNoRandom.txt','r'):
 
             file.write(str(i) + '\n')
-
-
-
-
-
