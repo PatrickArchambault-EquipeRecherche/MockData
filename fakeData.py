@@ -43,6 +43,7 @@ for n in range(20):
         Adresse = faker.street_address()
         No_dossier = faker.random_number()
         Territoire_CLSC = faker.city()
+  
     df.append({
         'RecordID': RecordID,
         'Sex': sex,
@@ -56,6 +57,7 @@ for n in range(20):
         'Adresse': Adresse,
         'No_dossier': No_dossier,
         'Territoire_CLSC': Territoire_CLSC,
+        'Motif': "tumeur a son petit cerveau",
         'RAMQ': ramq_generator(DDN, Last_Name, First_Name, sex, admin_code=str(random.randint(10, 99)))
               })
 
