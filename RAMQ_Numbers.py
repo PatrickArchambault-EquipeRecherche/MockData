@@ -61,7 +61,7 @@ def randomRAMQ(startdate="1910-01-01" , enddate="2020-01-01" , format="%Y-%m-%d"
     new_ramq = makeRAMQ(birthdate, last_name, first_name, aleatoire_bit, sex , date_format)
     return new_ramq
 
-print(randomRAMQ())
+#print(randomRAMQ())
 
 # Check a RAMQ number against name, birthdate
 def checkRAMQ(ramq_number , birthdate , last_name , first_name , sex , date_format="%Y-%m-%d"):
