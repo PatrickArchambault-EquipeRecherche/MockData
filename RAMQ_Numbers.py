@@ -7,9 +7,7 @@ Eventually including:
     1. sanity-checking RAMQ number against name and birthdate
     2. generate a RAMQ number from name, birthdate, assigned sex
     3. generate a random RAMQ number that follows the rules
-    4. get a RAMQ number column from an Excel file for matching in another 
-        database
-
+    
 """
 
 import datetime
