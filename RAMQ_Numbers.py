@@ -11,6 +11,7 @@ Eventually including:
 """
 
 import datetime
+from hashlib import new
 import random
 import faker
 
@@ -42,7 +43,7 @@ def makeRAMQ(birthdate , last_name , first_name , last_two , sex , date_format="
 
 #print(makeRAMQ(my_birthdate,my_last_name,my_first_name))
 
-def randomRAMQ(startdate="1910-01-01" , enddate="2020-01-01" , format="%Y-%m-%d"):
+def randomRAMQ(startdate="1910-01-01" , enddate="2020-01-01" , format="%Y-%m-%d" , full=False):
     # Use faker to create a name and birthdate, then call makeRAMQ
     fake = faker.Faker("fr_CA")
     start = datetime.datetime.strptime(startdate , format)
@@ -57,7 +58,17 @@ def randomRAMQ(startdate="1910-01-01" , enddate="2020-01-01" , format="%Y-%m-%d"
     aleatoire_bit = "%02d" % random.randint(0,99)
     date_format = "%Y-%m-%d"
     new_ramq = makeRAMQ(birthdate, last_name, first_name, aleatoire_bit, sex , date_format)
-    return new_ramq
+    if full == True:
+        result = f"""
+Birthdate: {birthdate}
+Last Name: {last_name}
+First Name: {first_name}
+Sex: {sex}
+RAMQ: {new_ramq}
+"""
+    else:
+        result = new_ramq
+    return result
 
 #print(randomRAMQ())
 
@@ -80,3 +91,4 @@ def checkRAMQ(ramq_number , birthdate , last_name , first_name , sex , date_form
     
 
 #checkRAMQ(my_ramq, my_birthdate, my_last_name, my_first_name)
+print(randomRAMQ("1950-01-01","2022-01-01",full=True))
