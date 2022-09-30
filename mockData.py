@@ -67,7 +67,7 @@ def mockData(parameterfile , count , filename = None):
         
         csv_output.writerow(columnname[1:])
 
-        for j in range(1,count+1):
+        for j in range(1,int(count)+1):
             tmp_row = []
             for i in range(1, number_of_final_columns):
                 tmp_row.append(fakeIt(  type=datatype[i],
@@ -100,3 +100,4 @@ if __name__ == "__main__":
 #print(fakeIt(name="c",type="string",length=200))
 #print(fakeIt(name="d",type="number",start=90,end=200))
 #print(fakeIt(name="e",type="date",start="2021-08-10",end="2021-12-10",description="%Y-%m-%d"))
+
