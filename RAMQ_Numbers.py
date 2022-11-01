@@ -28,6 +28,8 @@ def makeRAMQ(birthdate , last_name , first_name , last_two , sex , date_format="
     # two digits, otherwise we generate them at random.
     bd_dt = datetime.datetime.strptime(birthdate, date_format)
     first_initial = unidecode.unidecode(first_name[0].upper(), "utf-8")
+    last_name = last_name.replace("-","")
+    last_name = last_name.replace(" ","")
     short_lastname = unidecode.unidecode(last_name[0:3].upper(), "utf-8")
     aleatoire_bit = last_two
     year = bd_dt.strftime("%y")
