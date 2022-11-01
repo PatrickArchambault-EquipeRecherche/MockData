@@ -11,9 +11,9 @@ Eventually including:
 """
 
 import datetime
-from hashlib import new
 import random
 import faker
+import unidecode
 
 # Sample RAMQ Number and related information
 my_ramq = "TREL 8602 0211"
@@ -27,7 +27,7 @@ def makeRAMQ(birthdate , last_name , first_name , last_two , sex , date_format="
     # If it is a deterministic number we're looking for, we specify the last
     # two digits, otherwise we generate them at random.
     bd_dt = datetime.datetime.strptime(birthdate, date_format)
-    first_initial = first_name[0].upper()
+    first_initial = unidecode.unidecode(first_name[0].upper(), "utf-8")
     short_lastname = last_name[0:3].upper()
     aleatoire_bit = last_two
     year = bd_dt.strftime("%y")
@@ -91,4 +91,5 @@ def checkRAMQ(ramq_number , birthdate , last_name , first_name , sex , date_form
     
 
 #checkRAMQ(my_ramq, my_birthdate, my_last_name, my_first_name)
-print(randomRAMQ("1950-01-01","2022-01-01",full=True))
+if __name__ == "__main__":
+    print(randomRAMQ("1950-01-01","2022-01-01",full=True))
